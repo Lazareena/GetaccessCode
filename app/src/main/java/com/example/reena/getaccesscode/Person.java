@@ -6,7 +6,6 @@ package com.example.reena.getaccesscode;
 public class Person {
     private String name;
     private String password;
-    private String granType;
 
     public String getName() {
         return name;

@@ -32,7 +32,6 @@ public class MainActivity extends Activity implements OnClickListener {
 
     TextView tvIsConnected;
     EditText name, password;
-    String grantType;
     Button btnPost;
 
     Person person;
@@ -85,8 +84,8 @@ public class MainActivity extends Activity implements OnClickListener {
             json = jsonObject.toString();
 
             // ** Alternative way to convert Person object to JSON string usin Jackson Lib
-            // ObjectMapper mapper = new ObjectMapper();
-            // json = mapper.writeValueAsString(person);
+//            ObjectMapper mapper = new ObjectMapper();
+//            json = mapper.writeValueAsString(person);
 
             // 5. set json to StringEntity
             StringEntity se = new StringEntity(json);
@@ -108,6 +107,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 result = convertInputStreamToString(inputStream);
             else
                 result = "Did not work!";
+            Log.d("access code", result);
 
         } catch (Exception e) {
             Log.d("InputStream", e.getLocalizedMessage());
@@ -115,6 +115,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
         // 11. return result
         return result;
+
     }
 
     public boolean isConnected() {
